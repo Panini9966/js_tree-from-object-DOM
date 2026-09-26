@@ -29,10 +29,7 @@ function createTree(element, data) {
     li.textContent = key;
 
     if (Object.keys(data[key]).length > 0) {
-      const nestedUl = document.createElement('ul');
-
-      li.append(nestedUl);
-      createTree(nestedUl, data[key]);
+      createTree(li, data[key]);
     }
 
     ul.append(li);
